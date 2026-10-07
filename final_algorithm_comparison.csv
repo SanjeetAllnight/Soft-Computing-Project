@@ -1,0 +1,6 @@
+Algorithm,Features,Balanced F1,Balanced FPR,Balanced Inference Time,Final Pareto Solutions,Hypervolume,Search Runtime,Best F1 (Extremal),Best FPR (Extremal),Fastest (Extremal)
+Baseline (Full Features),10000,0.6848,6.81%,3.375 ms,N/A,N/A,N/A,"0.6848 (FPR 6.81%, 3.375 ms)",6.81% (F1 0.6848),3.375 ms
+NSGA-II,500,0.5911,7.43%,1.423 ms,19,0.00533716,249.4 s,"0.6430 (FPR 7.65%, 3.229 ms)","6.91% (F1 0.5389, 1.254 ms)","0.899 ms (F1 0.4067, FPR 8.13%)"
+SPEA2,500,0.5727,6.58%,1.267 ms,17,0.00522081,220.7 s,"0.6267 (FPR 7.70%, 2.984 ms)","6.58% (F1 0.5727, 1.267 ms)","0.950 ms (F1 0.4072, FPR 9.13%)"
+MOEA/D,500,0.6395,7.31%,2.671 ms,2,0.00438351,269.8 s,"0.6446 (FPR 7.19%, 2.852 ms)","7.19% (F1 0.6446, 2.852 ms)","2.671 ms (F1 0.6395, FPR 7.31%)"
+MODE,500,0.552,7.91%,1.558 ms,15,0.00498118,235.1 s,"0.6160 (FPR 8.56%, 4.113 ms)","7.59% (F1 0.4949, 1.188 ms)","0.903 ms (F1 0.2537, FPR 51.43%)"

@@ -1,0 +1,77 @@
+# ==============================================================================
+# Python & Virtual Environments
+# ==============================================================================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================================================================
+# Jupyter Notebook & IDE Artifacts
+# ==============================================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# Large Datasets & Archives (> 50 MB / GitHub Limit)
+# ==============================================================================
+# Raw Jigsaw comment dataset files
+train.csv
+test.csv
+train.csv.zip
+test.csv.zip
+*.zip
+
+# Full dense processed CSVs (2.5 GB and 0.6 GB)
+processed_data/processed_train.csv
+processed_data/processed_validation.csv
+
+# Large numerical sparse matrices (> 66 MB)
+*.npz
+X_train.npz
+X_val.npz
+
+# Model & vectorizer joblib files
+*.joblib
+baseline_model.joblib
+tfidf_vectorizer.joblib
+
+# Temporary test folders
+scratch*/
+tmp*/
+demo_bundle_test*/
+
+# ==============================================================================
+# Track Small Project Artifacts (Explicit Overrides)
+# ==============================================================================
+!processed_data/processed_sample.csv
+!selected_features_*.npy
+!y_train.npy
+!y_val.npy

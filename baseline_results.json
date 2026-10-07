@@ -1,0 +1,37 @@
+{
+    "model_type": "LinearSVC",
+    "hyperparameters": {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "random_state": 42
+    },
+    "dataset": {
+        "training_samples": 127656,
+        "validation_samples": 31915,
+        "features_used": 10000
+    },
+    "objectives": {
+        "f1_score": 0.6848032392762242,
+        "false_negative_rate": 0.16610169491525423,
+        "inference_time_total_seconds": 0.0033747761999620707,
+        "inference_time_total_ms": 3.3747761999620707,
+        "inference_time_per_comment_us": 0.10574263512336113,
+        "inference_time_per_comment_ms": 0.00010574263512336114
+    },
+    "metrics": {
+        "accuracy": 0.9219489268369105,
+        "precision": 0.5809360240446544,
+        "recall": 0.8338983050847457,
+        "true_negatives": 26718,
+        "false_positives": 1952,
+        "false_negatives": 539,
+        "true_positives": 2706
+    },
+    "timing_runs_seconds": [
+        0.003354442999807361,
+        0.0033634820001680055,
+        0.0034081710000464227,
+        0.0034233469996252097,
+        0.0033244380001633544
+    ]
+}

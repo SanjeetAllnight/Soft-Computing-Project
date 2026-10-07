@@ -1,0 +1,6 @@
+Algorithm,Features,F1 Score,False Positive Rate (FPR),Inference Time,Search Runtime,Pareto Front Size
+Baseline (Full Features),10000,0.6848,6.81%,3.375 ms,N/A,N/A
+NSGA-II,500,0.643,7.65%,3.229 ms,249.4 s,28
+SPEA2,500,0.6267,7.70%,2.984 ms,220.7 s,28
+MOEA/D,500,0.6446,7.19%,2.858 ms,269.8 s,18
+MODE,500,0.616,8.56%,4.113 ms,235.1 s,26

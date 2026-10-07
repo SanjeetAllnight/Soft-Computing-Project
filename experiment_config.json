@@ -1,0 +1,21 @@
+{
+    "dataset": "Jigsaw Toxic Comment Classification",
+    "raw_samples": 159571,
+    "train_samples": 127656,
+    "full_val_samples": 31915,
+    "search_subset_samples": 8000,
+    "feature_count_target": 500,
+    "feature_reduction_percent": 95.0,
+    "classifier": "LinearSVC(class_weight='balanced', C=1.0, random_state=42, dual='auto')",
+    "algorithms": [
+        "NSGA-II",
+        "SPEA2",
+        "MOEA/D",
+        "MODE"
+    ],
+    "population_size": 28,
+    "generations": 20,
+    "total_unique_evaluations": 2091,
+    "cache_hits": 289,
+    "random_seed": 42
+}
