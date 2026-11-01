@@ -1,0 +1,76 @@
+================================================================================
+MLRan SVM CLASSIFICATION EXPERIMENT - DETAILED TEST REPORTS
+================================================================================
+
+MODEL: Linear SVM
+Best Hyperparameters: {'svm__C': 0.1}
+Best CV F1: 0.9914
+Test Accuracy:  0.9774 (97.74%)
+Test F1-score:  0.9763
+Test Precision: 0.9763
+Test Recall:    0.9763
+Test ROC-AUC:   0.9935
+Training Time:  0.158 s
+Test Inference Time: 11.80 ms (12.10 us/sample)
+Confusion Matrix: TN=499, FP=11, FN=11, TP=454
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   Benign (0)     0.9784    0.9784    0.9784       510
+Malicious (1)     0.9763    0.9763    0.9763       465
+
+     accuracy                         0.9774       975
+    macro avg     0.9774    0.9774    0.9774       975
+ weighted avg     0.9774    0.9774    0.9774       975
+
+--------------------------------------------------------------------------------
+
+MODEL: RBF SVM
+Best Hyperparameters: {'svm__C': 10, 'svm__gamma': 'scale'}
+Best CV F1: 0.9928
+Test Accuracy:  0.9815 (98.15%)
+Test F1-score:  0.9808
+Test Precision: 0.9745
+Test Recall:    0.9871
+Test ROC-AUC:   0.9974
+Training Time:  0.359 s
+Test Inference Time: 98.84 ms (101.38 us/sample)
+Confusion Matrix: TN=498, FP=12, FN=6, TP=459
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   Benign (0)     0.9881    0.9765    0.9822       510
+Malicious (1)     0.9745    0.9871    0.9808       465
+
+     accuracy                         0.9815       975
+    macro avg     0.9813    0.9818    0.9815       975
+ weighted avg     0.9816    0.9815    0.9815       975
+
+--------------------------------------------------------------------------------
+
+MODEL: Polynomial SVM
+Best Hyperparameters: {'svm__C': 10, 'svm__degree': 2, 'svm__gamma': 'scale'}
+Best CV F1: 0.9879
+Test Accuracy:  0.9795 (97.95%)
+Test F1-score:  0.9786
+Test Precision: 0.9744
+Test Recall:    0.9828
+Test ROC-AUC:   0.9970
+Training Time:  0.459 s
+Test Inference Time: 60.98 ms (62.54 us/sample)
+Confusion Matrix: TN=498, FP=12, FN=8, TP=457
+
+Classification Report:
+               precision    recall  f1-score   support
+
+   Benign (0)     0.9842    0.9765    0.9803       510
+Malicious (1)     0.9744    0.9828    0.9786       465
+
+     accuracy                         0.9795       975
+    macro avg     0.9793    0.9796    0.9795       975
+ weighted avg     0.9795    0.9795    0.9795       975
+
+--------------------------------------------------------------------------------
+

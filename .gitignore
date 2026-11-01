@@ -40,38 +40,56 @@ wheels/
 Thumbs.db
 
 # ==============================================================================
-# Large Datasets & Archives (> 50 MB / GitHub Limit)
+# Large Datasets & Archives (> GitHub 100 MB Limit)
 # ==============================================================================
-# Raw Jigsaw comment dataset files
+
+# Raw Jigsaw Toxic Comment CSVs (~66 MB, ~58 MB)
 train.csv
 test.csv
 train.csv.zip
 test.csv.zip
-*.zip
 
-# Full dense processed CSVs (2.5 GB and 0.6 GB)
-processed_data/processed_train.csv
-processed_data/processed_validation.csv
-
-# Large numerical sparse matrices (> 66 MB)
-*.npz
+# Sparse TF-IDF matrices (~67 MB, ~17 MB)
 X_train.npz
 X_val.npz
 
-# Model & vectorizer joblib files
-*.joblib
-baseline_model.joblib
-tfidf_vectorizer.joblib
+# MLRan full dataset (multi-GB parquet + huge JSON dictionaries)
+Assignment/MLRan_full_dataset/
+Assignment/MLRan_full_dataset.zip
 
-# Temporary test folders
+# Demo bundle ZIPs (~84 MB each)
+Soft_Computing_Project_Demo_Bundle.zip
+Soft_Computing_Project_Demo_RF_Final_Bundle.zip
+
+# Catch any other large archives
+*.zip
+
+# ==============================================================================
+# Model Binaries
+# ==============================================================================
+*.joblib
+
+# ==============================================================================
+# Processed Data (regenerable)
+# ==============================================================================
+processed_data/processed_train.csv
+processed_data/processed_validation.csv
+
+# ==============================================================================
+# Temporary / Scratch
+# ==============================================================================
 scratch*/
 tmp*/
 demo_bundle_test*/
 
 # ==============================================================================
-# Track Small Project Artifacts (Explicit Overrides)
+# Explicit Keeps (override glob rules above)
 # ==============================================================================
-!processed_data/processed_sample.csv
+
+# Small numpy arrays (selected features, labels) — all < 128 KB
 !selected_features_*.npy
 !y_train.npy
 !y_val.npy
+
+# Small processed sample (~2.2 MB)
+!processed_data/processed_sample.csv

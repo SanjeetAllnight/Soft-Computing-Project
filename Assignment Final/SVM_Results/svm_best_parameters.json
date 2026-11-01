@@ -1,0 +1,23 @@
+{
+    "Linear SVM": {
+        "best_params": {
+            "svm__C": 0.1
+        },
+        "best_cv_f1_score": 0.9914172576141941
+    },
+    "RBF SVM": {
+        "best_params": {
+            "svm__C": 10,
+            "svm__gamma": "scale"
+        },
+        "best_cv_f1_score": 0.9927512265079925
+    },
+    "Polynomial SVM": {
+        "best_params": {
+            "svm__C": 10,
+            "svm__degree": 2,
+            "svm__gamma": "scale"
+        },
+        "best_cv_f1_score": 0.98793669308397
+    }
+}

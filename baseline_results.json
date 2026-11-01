@@ -1,37 +1,33 @@
 {
-    "model_type": "LinearSVC",
+    "model_type": "RandomForestClassifier",
     "hyperparameters": {
-        "C": 1.0,
+        "n_estimators": 50,
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "max_features": "sqrt",
         "class_weight": "balanced",
-        "random_state": 42
+        "random_state": 42,
+        "n_jobs": -1
     },
     "dataset": {
         "training_samples": 127656,
         "validation_samples": 31915,
         "features_used": 10000
     },
-    "objectives": {
-        "f1_score": 0.6848032392762242,
-        "false_negative_rate": 0.16610169491525423,
-        "inference_time_total_seconds": 0.0033747761999620707,
-        "inference_time_total_ms": 3.3747761999620707,
-        "inference_time_per_comment_us": 0.10574263512336113,
-        "inference_time_per_comment_ms": 0.00010574263512336114
-    },
     "metrics": {
-        "accuracy": 0.9219489268369105,
-        "precision": 0.5809360240446544,
-        "recall": 0.8338983050847457,
-        "true_negatives": 26718,
-        "false_positives": 1952,
-        "false_negatives": 539,
-        "true_positives": 2706
-    },
-    "timing_runs_seconds": [
-        0.003354442999807361,
-        0.0033634820001680055,
-        0.0034081710000464227,
-        0.0034233469996252097,
-        0.0033244380001633544
-    ]
+        "accuracy": 0.9410621964593452,
+        "f1_score": 0.6715557883708748,
+        "precision": 0.7747784045124899,
+        "recall": 0.5926040061633282,
+        "false_positive_rate": 0.01949773282176491,
+        "false_negative_rate": 0.4073959938366718,
+        "inference_time_total_seconds": 0.0995876794000651,
+        "inference_time_total_ms": 99.5876794000651,
+        "training_time_seconds": 27.809720039367676,
+        "true_negatives": 28111,
+        "false_positives": 559,
+        "false_negatives": 1322,
+        "true_positives": 1923
+    }
 }
