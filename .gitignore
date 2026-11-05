@@ -27,6 +27,15 @@ wheels/
 *.egg
 
 # ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env.*
+*.env
+!*.example.env
+!*.env.example
+
+# ==============================================================================
 # Jupyter Notebook & IDE Artifacts
 # ==============================================================================
 .ipynb_checkpoints/
@@ -61,13 +70,25 @@ Assignment/MLRan_full_dataset.zip
 Soft_Computing_Project_Demo_Bundle.zip
 Soft_Computing_Project_Demo_RF_Final_Bundle.zip
 
-# Catch any other large archives
+# Catch all compressed archives
 *.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
 
 # ==============================================================================
-# Model Binaries
+# Model Binaries & Checkpoints
 # ==============================================================================
 *.joblib
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
 
 # ==============================================================================
 # Processed Data (regenerable)
@@ -76,11 +97,37 @@ processed_data/processed_train.csv
 processed_data/processed_validation.csv
 
 # ==============================================================================
-# Temporary / Scratch
+# Temporary, Scratch & Log Files
 # ==============================================================================
 scratch*/
 tmp*/
+temp*/
 demo_bundle_test*/
+*.tmp
+*.bak
+*.log
+
+# ==============================================================================
+# Unrelated Coursework & Lab Documents
+# ==============================================================================
+*.pdf
+
+# ==============================================================================
+# SVM Experiment Scratch Scripts & Exploratory Visualizations
+# ==============================================================================
+# Redundant / scratch trial scripts (production is svm_experiment.py)
+Assignment Final/SVM_Results/svv.py
+Assignment Final/SVM_Results/svm_experiment_test_set.py
+Assignment Final/SVM_Results/svm_experiment_with_pca.py
+Assignment Final/SVM_Results/svm_kernel_decision_boundaries_test.py
+Assignment Final/SVM_Results/svm_kernels_test_data_only.py
+
+# Heavy exploratory boundary/dashboard plots (> 1 MB each; official plots are tracked)
+Assignment Final/SVM_Results/svm_3_models_test_set_pca.png
+Assignment Final/SVM_Results/svm_kernel_lines_test_data.png
+Assignment Final/SVM_Results/svm_three_lines_dashboard.png
+Assignment Final/SVM_Results/svm_three_margin_lines.png
+Assignment Final/SVM_Results/svm_three_models_boundary_lines.png
 
 # ==============================================================================
 # Explicit Keeps (override glob rules above)

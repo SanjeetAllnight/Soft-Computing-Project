@@ -20,8 +20,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib.lines import Line2D
 
 import joblib
+from sklearn.decomposition import PCA
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
@@ -356,6 +358,51 @@ def plot_roc_curves(eval_results, output_dir):
     print(f"Saved: {roc_path}")
 
 
+def plot_svm_kernel_lines(X_train, X_test, y_test, estimators, output_dir):
+    """Plot the three SVM decision-boundary lines projected over test samples."""
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
+    pca = PCA(n_components=2, random_state=RANDOM_STATE)
+    pca.fit(X_train_scaled)
+    X_test_pca = pca.transform(X_test_scaled)
+
+    x_min, x_max = X_test_pca[:, 0].min() - 2, X_test_pca[:, 0].max() + 2
+    y_min, y_max = X_test_pca[:, 1].min() - 2, X_test_pca[:, 1].max() + 2
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 350), np.linspace(y_min, y_max, 350))
+    grid_pca = np.c_[xx.ravel(), yy.ravel()]
+    grid_scaled = pca.inverse_transform(grid_pca)
+    grid_original = scaler.inverse_transform(grid_scaled)
+
+    fig, ax = plt.subplots(figsize=(12, 8))
+    ax.scatter(X_test_pca[y_test == 0, 0], X_test_pca[y_test == 0, 1], c="royalblue", s=15, alpha=0.35, label="Benign (0) Test Samples", zorder=2)
+    ax.scatter(X_test_pca[y_test == 1, 0], X_test_pca[y_test == 1, 1], c="red", s=15, alpha=0.35, label="Malicious (1) Test Samples", zorder=2)
+
+    line_styles = {
+        "Linear SVM": ("blue", "Linear SVM Decision Boundary"),
+        "RBF SVM": ("green", "RBF SVM Decision Boundary"),
+        "Polynomial SVM": ("darkorange", "Polynomial SVM Decision Boundary")
+    }
+
+    for name, model in estimators.items():
+        color, label = line_styles[name]
+        decision_values = model.decision_function(grid_original).reshape(xx.shape)
+        ax.contour(xx, yy, decision_values, levels=[0], colors=[color], linewidths=2.2, linestyles="solid", zorder=3)
+        ax.plot([], [], color=color, linewidth=2.2, label=label)
+
+    ax.set_title("The 3 SVM Kernel Decision Lines (Linear vs RBF vs Polynomial)")
+    ax.set_xlabel(f"PCA Component 1 ({pca.explained_variance_ratio_[0] * 100:.1f}% variance)")
+    ax.set_ylabel(f"PCA Component 2 ({pca.explained_variance_ratio_[1] * 100:.1f}% variance)")
+    ax.grid(alpha=0.3)
+    ax.legend(loc="upper right", fontsize=9, framealpha=1)
+    fig.tight_layout()
+    plot_path = os.path.join(output_dir, "svm_kernel_lines_test_data.png")
+    fig.savefig(plot_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Saved: {plot_path}")
+
+
 def main():
     train_path, test_path, labels_path, json_path, output_dir = resolve_paths()
     print(f"Working Directory: {os.getcwd()}")
@@ -499,6 +546,7 @@ def main():
     plot_confusion_matrices(eval_results, output_dir)
     plot_model_comparison(eval_results, output_dir)
     plot_roc_curves(eval_results, output_dir)
+    plot_svm_kernel_lines(X_train, X_test, y_test, best_estimators, output_dir)
 
     # Step 8: Terminal Summary
     print("\n" + "=" * 80)
@@ -530,8 +578,6 @@ def main():
     print("*" * 80 + "\n")
 
     return results_df, best_parameters_dict
-
-
+    
 if __name__ == "__main__":
     main()
-

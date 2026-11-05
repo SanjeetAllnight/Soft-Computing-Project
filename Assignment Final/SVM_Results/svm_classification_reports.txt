@@ -10,8 +10,8 @@ Test F1-score:  0.9763
 Test Precision: 0.9763
 Test Recall:    0.9763
 Test ROC-AUC:   0.9935
-Training Time:  0.158 s
-Test Inference Time: 11.80 ms (12.10 us/sample)
+Training Time:  0.143 s
+Test Inference Time: 11.10 ms (11.38 us/sample)
 Confusion Matrix: TN=499, FP=11, FN=11, TP=454
 
 Classification Report:
@@ -34,8 +34,8 @@ Test F1-score:  0.9808
 Test Precision: 0.9745
 Test Recall:    0.9871
 Test ROC-AUC:   0.9974
-Training Time:  0.359 s
-Test Inference Time: 98.84 ms (101.38 us/sample)
+Training Time:  0.310 s
+Test Inference Time: 87.07 ms (89.30 us/sample)
 Confusion Matrix: TN=498, FP=12, FN=6, TP=459
 
 Classification Report:
@@ -58,8 +58,8 @@ Test F1-score:  0.9786
 Test Precision: 0.9744
 Test Recall:    0.9828
 Test ROC-AUC:   0.9970
-Training Time:  0.459 s
-Test Inference Time: 60.98 ms (62.54 us/sample)
+Training Time:  0.369 s
+Test Inference Time: 49.02 ms (50.28 us/sample)
 Confusion Matrix: TN=498, FP=12, FN=8, TP=457
 
 Classification Report:
